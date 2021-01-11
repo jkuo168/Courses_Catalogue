@@ -90,7 +90,7 @@ export default function ClassCardDialog(props) {
       <DialogContent>
         <div className={classes.title}>{props.data.title}</div>
         <div className={classes.info}>
-          <img className={classes.img} src={props.data.imgUrl}></img>
+          <img className={classes.img} src={props.data.imgUrl} alt=""></img>
           <div className={classes.author}>By: {props.data.author}</div>
           <div className={classes.viewCount}>{props.data.viewCount} views</div>
           <div className={classes.time}>{props.data.time}</div>

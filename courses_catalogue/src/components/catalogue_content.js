@@ -5,9 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Carousel from "./carousel.js";
 
 const useStyles = makeStyles(() => ({
-  catalogue_content: {
-    //padding: "20px",
-  },
   social_sciences: {
     width: "327px",
     position: "absolute",
@@ -35,7 +32,6 @@ const useStyles = makeStyles(() => ({
     color: "#038C65",
   },
   social_science_carousel: {
-    display: "flex",
     position: "absolute",
     width: "1600px",
     left: "82px",
@@ -44,7 +40,6 @@ const useStyles = makeStyles(() => ({
     overflowY: "hidden",
   },
   design_carousel: {
-    display: "flex",
     position: "absolute",
     width: "1600px",
     left: "82px",
@@ -152,7 +147,7 @@ export default function CatalogueContent() {
   ];
 
   return (
-    <Paper className={classes.catalogue_content}>
+    <Paper>
       <div className={classes.social_sciences}>Social Sciences</div>
       <div className={classes.social_science_carousel}>
         <Carousel data={social_science_classes} />
