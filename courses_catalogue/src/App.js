@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import ProfilePage from "./pages/profile.js";
 import CataloguePage from "./pages/catalogue.js";
 
