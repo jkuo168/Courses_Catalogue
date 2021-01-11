@@ -3,8 +3,13 @@ import ClassCard from "./card";
 
 export default function Carousel(props) {
   return (
-    <div>
-      <ClassCard {...props} />
-    </div>
+    props.data &&
+    props.data.map((course) => {
+      return (
+        <div key={course.id}>
+          <ClassCard data={course} />
+        </div>
+      );
+    })
   );
 }

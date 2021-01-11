@@ -17,6 +17,7 @@ const useStyles = makeStyles(() => ({
     borderRadius: "0",
     boxShadow: "none",
     overflow: "visible",
+    marginRight: "54px",
   },
   imgUrl: {
     border: "1px solid #038C65",

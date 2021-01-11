@@ -35,43 +35,121 @@ const useStyles = makeStyles(() => ({
     color: "#038C65",
   },
   social_science_carousel: {
+    display: "flex",
     position: "absolute",
-    width: "1321px",
-    height: "240px",
+    width: "1600px",
     left: "82px",
     top: "639px",
+    overflowX: "scroll",
+    overflowY: "hidden",
   },
   design_carousel: {
+    display: "flex",
     position: "absolute",
-    width: "1296px",
-    height: "240px",
+    width: "1600px",
     left: "82px",
+    right: "82px",
     top: "985px",
+    overflowX: "scroll",
+    overflowY: "hidden",
   },
 }));
 
 export default function CatalogueContent() {
   const classes = useStyles();
-  const social_science_classes = {
-    subject: "Social Sciences",
-    title: "Microecomonics 101",
-    description: "Introductory course in Microecomonics",
-    author: "Jane Doe",
-    imgUrl:
-      "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-    viewCount: 0,
-    time: "5h 24m",
-  };
-  const design_classes = {
-    subject: "Social Sciences",
-    title: "Microecomonics 101",
-    description: "Introductory course in Microecomonics",
-    author: "Jane Doe",
-    imgUrl:
-      "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-    viewCount: 0,
-    time: "5h 24m",
-  };
+  const social_science_classes = [
+    {
+      id: "1",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+    {
+      id: "2",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+    {
+      id: "3",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+    {
+      id: "4",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+    {
+      id: "5",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+    {
+      id: "6",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+  ];
+
+  const design_classes = [
+    {
+      id: "1",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+    {
+      id: "2",
+      subject: "Social Sciences",
+      title: "Microecomonics 101",
+      description: "Introductory course in Microecomonics",
+      author: "Jane Doe",
+      imgUrl:
+        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
+      viewCount: 0,
+      time: "5h 24m",
+    },
+  ];
 
   return (
     <Paper className={classes.catalogue_content}>
