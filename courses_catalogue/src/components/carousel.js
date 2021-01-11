@@ -17,9 +17,14 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     overflow: "auto",
     width: "1500px",
+    marginLeft: "10px",
+    marginRight: "10px",
   },
   course: {
     display: "inline-block",
+  },
+  arrow_buttons: {
+    top: "-40px",
   },
 }));
 
@@ -57,7 +62,10 @@ export default function Carousel(props) {
   return (
     <div className={classes.menu}>
       <div>
-        <IconButton onClick={() => handleNav("left")}>
+        <IconButton
+          className={classes.arrow_buttons}
+          onClick={() => handleNav("left")}
+        >
           <ArrowBackIosRoundedIcon />
         </IconButton>
       </div>
@@ -65,7 +73,10 @@ export default function Carousel(props) {
         {all_courses}
       </div>
       <div>
-        <IconButton onClick={() => handleNav("right")}>
+        <IconButton
+          className={classes.arrow_buttons}
+          onClick={() => handleNav("right")}
+        >
           <ArrowForwardIosRoundedIcon />
         </IconButton>
       </div>
