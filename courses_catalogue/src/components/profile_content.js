@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
   },
   recently_watched_courses: {
     position: "absolute",
-    width: "1600px",
+    width: "90vw",
     height: "230px",
     left: "99px",
     top: "549px",

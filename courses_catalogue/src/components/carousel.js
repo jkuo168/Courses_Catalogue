@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     overflowX: "auto",
     overflowY: "hidden",
-    width: "1500px",
+    width: "90vw",
     marginLeft: "10px",
     marginRight: "10px",
   },
