@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import axios from "axios";
+
 import Carousel from "./carousel.js";
 
 const useStyles = makeStyles(() => ({
-  social_sciences: {
-    width: "327px",
+  recently_watched_text: {
     position: "absolute",
-    height: "36px",
-    left: "82px",
-    top: "581px",
+    width: "257px",
+    height: "38px",
+    left: "99px",
+    top: "489px",
     fontFamily: "Lustria",
     fontStyle: "normal",
     fontWeight: "normal",
@@ -18,43 +18,18 @@ const useStyles = makeStyles(() => ({
     lineHeight: "38px",
     color: "#038C65",
   },
-  design: {
-    position: "absolute",
-    width: "327px",
-    height: "36px",
-    left: "82px",
-    top: "919px",
-    fontFamily: "Lustria",
-    fontStyle: "normal",
-    fontWeight: "normal",
-    fontSize: "30px",
-    lineHeight: "38px",
-    color: "#038C65",
-  },
-  social_science_carousel: {
+  recently_watched_courses: {
     position: "absolute",
     width: "1600px",
-    left: "82px",
-    top: "639px",
-    overflowX: "scroll",
-    overflowY: "hidden",
-  },
-  design_carousel: {
-    position: "absolute",
-    width: "1600px",
-    left: "82px",
-    right: "82px",
-    top: "985px",
-    overflowX: "scroll",
-    overflowY: "hidden",
+    height: "230px",
+    left: "99px",
+    top: "549px",
   },
 }));
 
-export default function CatalogueContent() {
+export default function ProfileContent() {
   const classes = useStyles();
-  // const [data, setData] = useState("");
-
-  const social_science_classes = [
+  const recently_watched_courses = [
     {
       id: "1",
       subject: "Social Sciences",
@@ -123,48 +98,11 @@ export default function CatalogueContent() {
     },
   ];
 
-  const design_classes = [
-    {
-      id: "1",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "2",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-  ];
-
-  //   useEffect(() => {
-  //     axios.get("http://localhost:8080/").then((res) => {
-  //       setData(res.data);
-  //       return res.data;
-  //     });
-  //   });
-
-  // console.log(data);
   return (
     <Paper>
-      <div className={classes.social_sciences}>Social Sciences</div>
-      <div className={classes.social_science_carousel}>
-        <Carousel data={social_science_classes} />
-      </div>
-      <div className={classes.design}>Design</div>
-      <div className={classes.design_carousel}>
-        <Carousel data={design_classes} />
+      <div className={classes.recently_watched_text}>Recently Watched</div>
+      <div className={classes.recently_watched_courses}>
+        <Carousel data={recently_watched_courses} />
       </div>
     </Paper>
   );

@@ -1,12 +1,24 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@material-ui/core/styles";
 
-import ProfileHeaderImage from "../images/princeton_tiger.jpg";
+import ProfileHeader from "../components/profile_header";
+import ProfileContent from "../components/profile_content";
+import ProfileImage from "../components/profile_image";
+
+const useStyles = makeStyles(() => ({
+  catalogue: {
+    minWidth: "1700px",
+  },
+}));
 
 export default function ProfilePage() {
+  const classes = useStyles();
+
   return (
-    <Paper>
-      <img src={ProfileHeaderImage} />
-    </Paper>
+    <div className={classes.catalogue}>
+      <ProfileHeader />
+      <ProfileImage />
+      <ProfileContent />
+    </div>
   );
 }

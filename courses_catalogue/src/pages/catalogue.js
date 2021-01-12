@@ -1,7 +1,8 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+
 import CatalogueHeader from "../components/catalogue_header";
 import CatalogueContent from "../components/catalogue_content";
-import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
   catalogue: {
