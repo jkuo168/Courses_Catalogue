@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import axios from "axios";
+import axios from "../axios";
 import Carousel from "./carousel.js";
 
 const useStyles = makeStyles(() => ({
@@ -52,7 +52,7 @@ const useStyles = makeStyles(() => ({
 
 export default function CatalogueContent() {
   const classes = useStyles();
-  // const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   const social_science_classes = [
     {
@@ -148,14 +148,14 @@ export default function CatalogueContent() {
     },
   ];
 
-  //   useEffect(() => {
-  //     axios.get("http://localhost:8080/").then((res) => {
-  //       setData(res.data);
-  //       return res.data;
-  //     });
-  //   });
+  axios.get("/api/courses").then((res) => {
+    console.log(res);
+    setData(res.data);
+    return res.data;
+  });
 
-  // console.log(data);
+  console.log(data);
+
   return (
     <Paper>
       <div className={classes.social_sciences}>Social Sciences</div>
