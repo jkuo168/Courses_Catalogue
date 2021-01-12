@@ -15,7 +15,8 @@ const useStyles = makeStyles(() => ({
   all_courses: {
     whiteSpace: "nowrap",
     display: "flex",
-    overflow: "auto",
+    overflowX: "auto",
+    overflowY: "hidden",
     width: "1500px",
     marginLeft: "10px",
     marginRight: "10px",
