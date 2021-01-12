@@ -1,10 +1,10 @@
-import React, { createRef } from "react";
+import React, { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
 
-import ClassCard from "./card";
+import CourseCard from "./course_card";
 
 const useStyles = makeStyles(() => ({
   menu: {
@@ -32,14 +32,14 @@ const useStyles = makeStyles(() => ({
 export default function Carousel(props) {
   const classes = useStyles();
 
-  const navRef = createRef();
+  const navRef = useRef();
 
   const all_courses =
     props.data &&
     props.data.map((course) => {
       return (
         <div className={classes.course} key={course._id}>
-          <ClassCard data={course} />
+          <CourseCard data={course} />
         </div>
       );
     });

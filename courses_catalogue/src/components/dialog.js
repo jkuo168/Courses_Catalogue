@@ -62,7 +62,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function ClassCardDialog(props) {
+export default function CourseCardDialog(props) {
   const classes = useStyles();
 
   const handleClose = () => {

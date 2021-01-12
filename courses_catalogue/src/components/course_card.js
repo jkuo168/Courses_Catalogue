@@ -7,7 +7,7 @@ import {
   CardMedia,
 } from "@material-ui/core";
 import axios from "../axios";
-import ClassCardDialog from "./dialog";
+import CourseCardDialog from "./dialog";
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -56,7 +56,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function ClassCard(props) {
+export default function CourseCard(props) {
   const [open, setOpen] = useState(false);
   const [count, setCount] = useState(0);
   const classes = useStyles();
@@ -91,7 +91,12 @@ export default function ClassCard(props) {
           </div>
         </CardContent>
       </Card>
-      <ClassCardDialog setOpen={setOpen} open={open} {...props} count={count} />
+      <CourseCardDialog
+        setOpen={setOpen}
+        open={open}
+        {...props}
+        count={count}
+      />
     </div>
   );
 }
