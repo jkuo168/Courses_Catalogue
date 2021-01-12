@@ -56,14 +56,12 @@ export default function CatalogueContent() {
   const [design_courses, setDesignCourses] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/courses/Social%20Sciences")
-      .then((res) => {
-        setSocialScienceCourses(res.data);
-        return;
-      });
+    axios.get("/api/courses/Social%20Sciences").then((res) => {
+      setSocialScienceCourses(res.data);
+      return;
+    });
 
-    axios.get("http://localhost:8080/api/courses/Design").then((res) => {
+    axios.get("/api/courses/Design").then((res) => {
       setDesignCourses(res.data);
       return;
     });
