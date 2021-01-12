@@ -148,7 +148,7 @@ export default function CatalogueContent() {
     },
   ];
 
-  axios.get("/api/courses").then((res) => {
+  axios.get("http://localhost:8080/api/courses/Design").then((res) => {
     console.log(res);
     setData(res.data);
     return res.data;
