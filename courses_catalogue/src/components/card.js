@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
 } from "@material-ui/core";
+import axios from "../axios";
 import ClassCardDialog from "./dialog";
 
 const useStyles = makeStyles(() => ({
@@ -57,10 +58,14 @@ const useStyles = makeStyles(() => ({
 
 export default function ClassCard(props) {
   const [open, setOpen] = useState(false);
-
+  const [count, setCount] = useState(0);
   const classes = useStyles();
 
   const handleOpen = () => {
+    axios.post(`/api/courses/increment/${props.data._id}`).then((res) => {
+      setCount(count + 1);
+      return;
+    });
     setOpen(true);
   };
 
@@ -79,14 +84,14 @@ export default function ClassCard(props) {
           <div className={classes.author}>{props.data.author}</div>
           <div className={classes.inline}>
             <div className={classes.viewCount}>
-              {props.data.viewCount} views
+              {props.data.viewCount + count} views
             </div>
             <div className={classes.flex} />
             <div className={classes.time}>{props.data.time}</div>
           </div>
         </CardContent>
       </Card>
-      <ClassCardDialog setOpen={setOpen} open={open} {...props} />
+      <ClassCardDialog setOpen={setOpen} open={open} {...props} count={count} />
     </div>
   );
 }
