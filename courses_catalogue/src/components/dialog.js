@@ -48,7 +48,7 @@ const useStyles = makeStyles(() => ({
     left: "58px",
     top: "537px",
   },
-  time: {
+  duration: {
     position: "absolute",
     left: "514px",
     top: "537px",
@@ -95,7 +95,7 @@ export default function ClassCardDialog(props) {
           <div className={classes.viewCount}>
             {props.data.viewCount + props.count} views
           </div>
-          <div className={classes.time}>{props.data.time}</div>
+          <div className={classes.duration}>{props.data.duration}</div>
           <div className={classes.description}>{props.data.description}</div>
         </div>
       </DialogContent>

@@ -48,7 +48,7 @@ const useStyles = makeStyles(() => ({
   flex: {
     flexGrow: "1",
   },
-  time: {
+  duration: {
     fontWeight: "normal",
     fontSize: "12px",
     lineHeight: "14px",
@@ -87,7 +87,7 @@ export default function ClassCard(props) {
               {props.data.viewCount + count} views
             </div>
             <div className={classes.flex} />
-            <div className={classes.time}>{props.data.time}</div>
+            <div className={classes.duration}>{props.data.duration}</div>
           </div>
         </CardContent>
       </Card>
