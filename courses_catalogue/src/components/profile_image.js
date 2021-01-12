@@ -36,7 +36,7 @@ export default function ProfileImage() {
 
   return (
     <div>
-      <img className={classes.img} src={ProfilePicture}></img>
+      <img className={classes.img} src={ProfilePicture} alt=""></img>
       <div className={classes.name}>Jane Doe</div>
     </div>
   );

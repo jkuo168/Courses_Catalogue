@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
     overflow: "visible",
     marginRight: "54px",
   },
-  imgUrl: {
+  img: {
     border: "1px solid #038C65",
   },
   card_content: {
@@ -69,9 +69,9 @@ export default function ClassCard(props) {
       <Card className={classes.card}>
         <CardActionArea onClick={handleOpen}>
           <CardMedia
-            className={classes.imgUrl}
+            className={classes.img}
             component="img"
-            image={props.data.imgUrl}
+            image={props.data.imageUrl}
           />
         </CardActionArea>
         <CardContent className={classes.card_content}>

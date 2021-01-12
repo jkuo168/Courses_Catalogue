@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import axios from "../axios";
@@ -52,119 +52,32 @@ const useStyles = makeStyles(() => ({
 
 export default function CatalogueContent() {
   const classes = useStyles();
-  const [data, setData] = useState([]);
+  const [social_science_courses, setSocialScienceCourses] = useState([]);
+  const [design_courses, setDesignCourses] = useState([]);
 
-  const social_science_classes = [
-    {
-      id: "1",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "2",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "3",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "4",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "5",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "6",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-  ];
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/courses/Social%20Sciences")
+      .then((res) => {
+        setSocialScienceCourses(res.data);
+        return;
+      });
 
-  const design_classes = [
-    {
-      id: "1",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "2",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-  ];
-
-  axios.get("http://localhost:8080/api/courses/Design").then((res) => {
-    console.log(res);
-    setData(res.data);
-    return res.data;
-  });
-
-  console.log(data);
+    axios.get("http://localhost:8080/api/courses/Design").then((res) => {
+      setDesignCourses(res.data);
+      return;
+    });
+  }, []);
 
   return (
     <Paper>
       <div className={classes.social_sciences}>Social Sciences</div>
       <div className={classes.social_science_carousel}>
-        <Carousel data={social_science_classes} />
+        <Carousel data={social_science_courses} />
       </div>
       <div className={classes.design}>Design</div>
       <div className={classes.design_carousel}>
-        <Carousel data={design_classes} />
+        <Carousel data={design_courses} />
       </div>
     </Paper>
   );

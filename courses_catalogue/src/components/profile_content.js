@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 
+import axios from "../axios";
 import Carousel from "./carousel.js";
 
 const useStyles = makeStyles(() => ({
@@ -29,74 +30,14 @@ const useStyles = makeStyles(() => ({
 
 export default function ProfileContent() {
   const classes = useStyles();
-  const recently_watched_courses = [
-    {
-      id: "1",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "2",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "3",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "4",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "5",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-    {
-      id: "6",
-      subject: "Social Sciences",
-      title: "Microecomonics 101",
-      description: "Introductory course in Microecomonics",
-      author: "Jane Doe",
-      imgUrl:
-        "https://www.finance-watch.org/wp-content/uploads/2018/08/money-supply-1600x1067.jpg",
-      viewCount: 0,
-      time: "5h 24m",
-    },
-  ];
+  const [recently_watched_courses, setRecentlyWatchedCourses] = useState([]);
+
+  useEffect(() => {
+    axios.get("/api/courses").then((res) => {
+      setRecentlyWatchedCourses(res.data);
+      return;
+    });
+  }, []);
 
   return (
     <Paper>

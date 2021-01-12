@@ -37,7 +37,7 @@ export default function Carousel(props) {
     props.data &&
     props.data.map((course) => {
       return (
-        <div className={classes.course} key={course.id}>
+        <div className={classes.course} key={course._id}>
           <ClassCard data={course} />
         </div>
       );
