@@ -33,7 +33,7 @@ const useStyles = makeStyles(() => ({
   },
   social_science_carousel: {
     position: "absolute",
-    width: "1600px",
+    width: "90vw",
     left: "82px",
     top: "639px",
     overflowX: "scroll",
@@ -41,7 +41,7 @@ const useStyles = makeStyles(() => ({
   },
   design_carousel: {
     position: "absolute",
-    width: "1600px",
+    width: "90vw",
     left: "82px",
     right: "82px",
     top: "985px",
