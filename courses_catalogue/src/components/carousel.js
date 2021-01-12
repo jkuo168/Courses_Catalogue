@@ -32,52 +32,18 @@ const useStyles = makeStyles(() => ({
 export default function Carousel(props) {
   const classes = useStyles();
 
-  const navRef = useRef();
-
-  const all_courses =
-    props.data &&
-    props.data.map((course) => {
-      return (
-        <div className={classes.course} key={course._id}>
-          <CourseCard data={course} />
-        </div>
-      );
-    });
-
-  const handleNav = (direction) => {
-    if (direction === "left") {
-      if (navRef) {
-        return (navRef.current.scrollLeft -= 200);
-      } else {
-        return null;
-      }
-    } else {
-      if (navRef) {
-        return (navRef.current.scrollLeft += 200);
-      } else {
-        return null;
-      }
-    }
-  };
+  const all_courses = <div></div>;
 
   return (
     <div className={classes.menu}>
       <div>
-        <IconButton
-          className={classes.arrow_buttons}
-          onClick={() => handleNav("left")}
-        >
+        <IconButton className={classes.arrow_buttons}>
           <ArrowBackIosRoundedIcon />
         </IconButton>
       </div>
-      <div className={classes.all_courses} ref={navRef}>
-        {all_courses}
-      </div>
+      <div className={classes.all_courses}>{all_courses}</div>
       <div>
-        <IconButton
-          className={classes.arrow_buttons}
-          onClick={() => handleNav("right")}
-        >
+        <IconButton className={classes.arrow_buttons}>
           <ArrowForwardIosRoundedIcon />
         </IconButton>
       </div>

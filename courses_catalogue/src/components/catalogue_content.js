@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import axios from "../axios";
 import Carousel from "./carousel.js";
 
+// IMPORT AXIOS
 const useStyles = makeStyles(() => ({
   social_sciences: {
     width: "327px",
@@ -56,15 +56,9 @@ export default function CatalogueContent() {
   const [design_courses, setDesignCourses] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/courses/Social%20Sciences").then((res) => {
-      setSocialScienceCourses(res.data);
-      return;
-    });
-
-    axios.get("/api/courses/Design").then((res) => {
-      setDesignCourses(res.data);
-      return;
-    });
+    // MAKE AXIOS CALLS
+    // GET SOCIAL SCIENCE COURSES
+    // GET DESIGN COURSES
   }, []);
 
   return (

@@ -8,7 +8,6 @@ import CatalogueHeaderImage from "../images/icons.jpg";
 
 const useStyles = makeStyles(() => ({
   paper: {
-    backgroundColor: "#038C65",
     position: "relative",
     borderRadius: 0,
   },
@@ -65,9 +64,6 @@ const useStyles = makeStyles(() => ({
     color: "white",
     textTransform: "none",
     textDecorationLine: "none",
-    "&:hover": {
-      textDecorationLine: "underline",
-    },
   },
   learn: {
     position: "absolute",
@@ -121,9 +117,7 @@ export default function CatalogueHeader() {
       <Link to="/" className={classes.catalogue_button}>
         Catalogue
       </Link>
-      <Link to="/profile" className={classes.profile_button}>
-        Profile
-      </Link>
+      {/* CREATE LINK TO PROFILE PAGE */}
       <div className={classes.learn}>Learn UI/UX!</div>
       <div className={classes.basics}>
         Basics of user experience and user interface design in 24 short

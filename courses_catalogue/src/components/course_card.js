@@ -62,10 +62,6 @@ export default function CourseCard(props) {
   const classes = useStyles();
 
   const handleOpen = () => {
-    axios.post(`/api/courses/increment/${props.data._id}`).then((res) => {
-      setCount(count + 1);
-      return;
-    });
     setOpen(true);
   };
 
@@ -84,19 +80,14 @@ export default function CourseCard(props) {
           <div className={classes.author}>{props.data.author}</div>
           <div className={classes.inline}>
             <div className={classes.viewCount}>
-              {props.data.viewCount + count} views
+              {props.data.viewCount} views
             </div>
             <div className={classes.flex} />
             <div className={classes.duration}>{props.data.duration}</div>
           </div>
         </CardContent>
       </Card>
-      <CourseCardDialog
-        setOpen={setOpen}
-        open={open}
-        {...props}
-        count={count}
-      />
+      <CourseCardDialog setOpen={setOpen} open={open} {...props} />
     </div>
   );
 }

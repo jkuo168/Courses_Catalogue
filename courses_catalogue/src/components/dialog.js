@@ -91,10 +91,8 @@ export default function CourseCardDialog(props) {
         <div className={classes.title}>{props.data.title}</div>
         <div className={classes.info}>
           <img className={classes.img} src={props.data.imageUrl} alt=""></img>
-          <div className={classes.author}>By: {props.data.author}</div>
-          <div className={classes.viewCount}>
-            {props.data.viewCount + props.count} views
-          </div>
+          <div className={classes.author}>By: </div>
+          <div className={classes.viewCount}>views</div>
           <div className={classes.duration}>{props.data.duration}</div>
           <div className={classes.description}>{props.data.description}</div>
         </div>

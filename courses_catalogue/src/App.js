@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ProfilePage from "./pages/profile.js";
+
+// IMPORT PROFILE PAGE
 import CataloguePage from "./pages/catalogue.js";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={CataloguePage} />
-        <Route exact path="/profile" component={ProfilePage} />
+        {/* ADD IN PROFILE ROUTE */}
       </Switch>
     </Router>
   );
